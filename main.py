@@ -1,5 +1,7 @@
 from division import division
 from multiplication import multiply
+from addition import addition
+from substraction import substraction
 
 x = 0
 y = 0
@@ -19,8 +21,7 @@ def get_input() -> None:
 
 
 
-x = 0
-y = 0
+
 def main():
     """
     Main function to run the program
@@ -30,10 +31,16 @@ def main():
 
 
     # if addition here
+    if operation == "+":
 
+        result = addition(x, y)
+        print(f"The result of adding {x} to {y} is: {result}")
 
     # if subtraction here
+    if operation == "-":
 
+        result = substraction(x, y)
+        print(f"The result of substracting {x} from {y} is: {result}")
 
 
     if operation == "*":
