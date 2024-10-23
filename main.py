@@ -23,8 +23,6 @@ def get_input() -> int:
     return x, y
 
 
-
-
 def main():
     """
     Main function to run the program
@@ -62,7 +60,6 @@ def main():
             result = substraction(x, y)
             print(f"The result of substracting {x} from {y} is: {result}")
 
-
         if operation == "*":
             result = multiply(x, y)
             print(f"The result of multiplying {x} and {y} is: {result}")
@@ -73,7 +70,10 @@ def main():
             print(f"The result of dividing {x} by {y} is: {result}")
          
         # if modulo here
-        
+        if operation == "%":
+            result = modulo(x, y)
+            print(f"The result of {x} modulo {y} is: {result}")
+
         # if exponential here
         if operation == "**":
 
