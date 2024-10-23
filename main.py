@@ -3,6 +3,7 @@ from multiplication import multiply
 from addition import addition
 from substraction import substraction
 from exponential import exponential
+from modulo import modulo
 
 x = 0
 y = 0
