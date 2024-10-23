@@ -42,7 +42,7 @@ def main():
         #Keep asking the user for an operation until result is valid        
         while True:
 
-            operation = input(f"{RESET}What operation would you like to do?\nPlease type operator : + - * / % **\nType quit to quit.\n")
+            operation = input(f"{RESET}What operation would you like to do?\nPlease type operator : + - * / % **\nType quit to quit.\n Type log to see history\n")
 
             #Typing quit kill the program
             if operation.lower() == "quit":
