@@ -7,18 +7,20 @@ from exponential import exponential
 x = 0
 y = 0
 
-def get_input() -> None:
+def get_input() -> int:
     """
     Ask user for two numbers. Keep asking until two valide numbers are inputed.    
     """
     #Keep asking the user for numbers until valid numbers are entered.
     while True:
         try:
-            x = float(input("Veuillez entrer le premier nombre :"))
-            y = float(input("Veuillez entrer le deuxième nombre :"))
+            x = int(input("Veuillez entrer le premier nombre (entiers uniquement) :"))
+            y = int(input("Veuillez entrer le deuxième nombre (entiers uniquement) :"))
             break
         except:
-            print("Veuillez n'entrer que des chiffres.")
+            print("Veuillez n'entrer que des chiffres entiers.")
+    
+    return x, y
 
 
 
@@ -27,39 +29,57 @@ def main():
     """
     Main function to run the program
     """
-    operation = input("What operation would you like to do? ")
-    get_input()
-
-
-    # if addition here
-    if operation == "+":
-
-        result = addition(x, y)
-        print(f"The result of adding {x} to {y} is: {result}")
-
-    # if subtraction here
-    if operation == "-":
-
-        result = substraction(x, y)
-        print(f"The result of substracting {x} from {y} is: {result}")
-
-    # if multiplication here
-    if operation == "*":
-
-        result = multiply(x, y)
-        print(f"The result of multiplying {x} and {y} is: {result}")
     
-    # if division here
-    
-    
-    # if modulo here
-    # if exponential here
-    if operation == "**":
+    #Keep going until the user close the program
+    while True:
+        
+        #Keep asking the user for an operation until result is valid        
+        while True:
+            operation = input("What operation would you like to do? Please type operator : + - * /\nType quit to quit.")
+            
+            #Typing quit kill the program
+            if operation.lower() == "quit":
+                return
+            
+            #Check if input is one character long and is an accepted operator
+            if operation == "**":
+                break
+            elif len(operation) > 1 or operation not in "*/+-":
+                print("Invalid operator. Please select +, -, * or / .")   
+            #If NOT loop    
+            else:
+                break
+        
+        #Get user's numbers
+        x, y = get_input()
 
-        result = exponential(x, y)
-        print(f"The result of {x} exponent {y} is: {result}")
-    else:
-        print("I don't know how to do that operation")
+        #Call the right function depending on the user's operator
+        if operation == "+":
+            result = addition(x, y)
+            print(f"The result of adding {x} to {y} is: {result}")
+
+        if operation == "-":
+            result = substraction(x, y)
+            print(f"The result of substracting {x} from {y} is: {result}")
+
+
+        if operation == "*":
+            result = multiply(x, y)
+            print(f"The result of multiplying {x} and {y} is: {result}")
+    
+        # if division here
+        if operation == "/":
+            result = division(x,y)
+            print(f"The result of dividing {x} by {y} is: {result}")
+         
+        # if modulo here
+        
+        # if exponential here
+        if operation == "**":
+
+          result = exponential(x, y)
+          print(f"The result of {x} exponent {y} is: {result}")
+       
 
 if __name__ == "__main__":
     main()
