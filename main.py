@@ -1,5 +1,7 @@
 import multiplication
 
+x = 0
+y = 0
 def main():
     """
     Main function to run the program
@@ -14,16 +16,10 @@ def main():
 
 
 
-    if operation in ["multiplication", "*", "x", "multiply"]:
-        try:
-            number_1 = int(input("Enter the first number to multiply: "))
-            number_2 = int(input("Enter the second number to multiply: "))
-        except ValueError:
-            print("Please enter valid integers.")
-            return
+    if operation == "*":
 
-        result = multiplication.multiply(number_1, number_2)
-        print(f"The result of multiplying {number_1} and {number_2} is: {result}")
+        result = multiplication.multiply(x, y)
+        print(f"The result of multiplying {x} and {y} is: {result}")
     
     # if division here
     
