@@ -3,6 +3,7 @@ from multiplication import multiply
 from addition import addition
 from substraction import substraction
 from exponential import exponential
+from modulo import modulo
 
 x = 0
 y = 0
@@ -22,8 +23,6 @@ def get_input() -> int:
             print("Please only input integer numbers.")
     
     return x, y
-
-
 
 
 def main():
@@ -64,7 +63,6 @@ def main():
             result = substraction(x, y)
             print(f"The result of substracting {x} from {y} is: {result}\n")
 
-
         if operation == "*":
             result = multiply(x, y)
             print(f"The result of multiplying {x} and {y} is: {result}\n")
@@ -75,7 +73,10 @@ def main():
             print(f"The result of dividing {x} by {y} is: {result}\n")
          
         # if modulo here
-        
+        if operation == "%":
+            result = modulo(x, y)
+            print(f"The result of {x} modulo {y} is: {result}")
+
         # if exponential here
         if operation == "**":
           result = exponential(x, y)
