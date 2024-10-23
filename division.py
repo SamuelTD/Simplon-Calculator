@@ -5,7 +5,7 @@ def division(x: float, y: float) -> float | str:
     """ 
     #Vérifie qu'on ne divise pas par zéro. Si OUI retourne un message d'erreur
     if y == 0.0:
-        return "ERROR : Impossible de divisier par zéro !"
+        return "ERROR : Cannot divide by zero!"
     
     #Sinon retourne la division
     return x/y
