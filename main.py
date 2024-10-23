@@ -4,6 +4,7 @@ from addition import addition
 from substraction import substraction
 from exponential import exponential
 from modulo import modulo
+import history
 
 x = 0
 y = 0
@@ -35,11 +36,15 @@ def main():
         
         #Keep asking the user for an operation until result is valid        
         while True:
-            operation = input("What operation would you like to do?\nPlease type operator : + - * / % **\nType quit to quit.\n")
+            operation = input("What operation would you like to do?\nPlease type operator : + - * / % **\nType quit to quit.\nType log for history.")
             
             #Typing quit kill the program
             if operation.lower() == "quit":
                 return
+            
+            if operation.lower() == "log":
+                history.read_history()
+                continue
             
             #Check if input is exponential
             if operation == "**":
@@ -81,6 +86,8 @@ def main():
         if operation == "**":
           result = exponential(x, y)
           print(f"The result of {x} exponent {y} is: {result}\n")
+        
+        history.append_result(f"{x} {operation} {y} = {result}\n")
        
 
 if __name__ == "__main__":
