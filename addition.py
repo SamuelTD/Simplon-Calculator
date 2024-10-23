@@ -5,4 +5,3 @@ def addition(a, b):
 
     
 
-print(addition(8, 4))
