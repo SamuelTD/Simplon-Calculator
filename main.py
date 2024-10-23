@@ -2,6 +2,7 @@ from division import division
 from multiplication import multiply
 from addition import addition
 from substraction import substraction
+from exponential import exponential
 
 x = 0
 y = 0
@@ -28,6 +29,7 @@ def main():
     """
     Main function to run the program
     """
+    
     #Keep going until the user close the program
     while True:
         
@@ -40,8 +42,10 @@ def main():
                 return
             
             #Check if input is one character long and is an accepted operator
-            if len(operation) > 1 or operation not in "*/+-":
-                print("Invalid operator. Please select +, -, * or / .")
+            if operation == "**":
+                break
+            elif len(operation) > 1 or operation not in "*/+-":
+                print("Invalid operator. Please select +, -, * or / .")   
             #If NOT loop    
             else:
                 break
@@ -67,7 +71,15 @@ def main():
         if operation == "/":
             result = division(x,y)
             print(f"The result of dividing {x} by {y} is: {result}")
+         
+        # if modulo here
         
+        # if exponential here
+        if operation == "**":
+
+          result = exponential(x, y)
+          print(f"The result of {x} exponent {y} is: {result}")
+       
 
 if __name__ == "__main__":
     main()
